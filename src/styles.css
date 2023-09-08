@@ -1,0 +1,102 @@
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+button {
+  border: none;
+  background-color: blueviolet;
+  color: white;
+  border-radius: 2px;
+  box-shadow: 2px 2px 0 0 rebeccapurple;
+  padding: 3px;
+}
+h1 {
+  color: blueviolet;
+  margin: 10px;
+  font-weight: 950px;
+}
+h2 {
+  line-height: 30px;
+  font-weight: bold;
+}
+h3 {
+  font-size: medium;
+  padding: none;
+}
+a {
+  text-decoration: none;
+}
+p {
+  margin-top: 10px;
+  margin-bottom: 0;
+  margin-right: 20px;
+  font-size: 60px;
+  text-align: right;
+}
+.button-format {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+  border-radius: 3px;
+  padding: 3px;
+  box-shadow: none;
+}
+.fa-solid {
+  font-size: 40px;
+  color: rgb(238, 222, 6);
+}
+
+.footer {
+  text-align: right;
+  line-height: 50px;
+  font-size: smaller;
+  margin: 10px;
+}
+#humidity-results {
+  text-align: right;
+}
+.visual-rep-text {
+  text-align: right;
+  line-height: 20px;
+}
+#weather-description {
+  text-align: right;
+}
+.weekly-prediction {
+  width: 100%;
+  text-align: center;
+  margin: 10px 0 20px 0;
+}
+#wind-speed {
+  text-align: right;
+}
+.container {
+  border: 1px solid;
+  border-color: rgba(134, 121, 121, 0.2);
+  border-radius: 5px;
+  background: linear-gradient(60deg, #abecd6 0%, #fbed96 100%);
+  box-shadow: 2px 2px 0 0 darkgrey;
+  width: 50%;
+  margin-top: 20px;
+}
+
+.card-body {
+  display: block;
+  border: 4px solid grey rgb(212, 177, 177);
+  text-align: center;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+.card-text {
+  font-weight: bold;
+  font-size: 11px;
+  text-align: center;
+}
+.temperature-digit {
+  font-size: 35px;
+  font-weight: bold;
+}
+.temperature {
+  font-size: 16px;
+  position: relative;
+  top: -15px;
+}
