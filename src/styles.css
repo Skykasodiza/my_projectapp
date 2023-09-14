@@ -2,6 +2,9 @@ body {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
+a {
+  text-decoration: none;
+}
 button {
   border: none;
   background-color: blueviolet;
@@ -23,9 +26,7 @@ h3 {
   font-size: medium;
   padding: none;
 }
-a {
-  text-decoration: none;
-}
+
 p {
   margin-top: 10px;
   margin-bottom: 0;
