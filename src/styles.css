@@ -14,8 +14,9 @@ button {
   padding: 3px;
 }
 h1 {
-  color: blueviolet;
-  margin: 10px;
+  display: block;
+  margin: 0 auto;
+  color: rgb(33, 33, 33);
   font-weight: 950px;
 }
 h2 {
@@ -23,7 +24,7 @@ h2 {
   font-weight: bold;
 }
 h3 {
-  font-size: medium;
+  font-size: 16px;
   padding: none;
 }
 
@@ -51,9 +52,15 @@ p {
   text-align: right;
   line-height: 50px;
   font-size: smaller;
-  margin: 10px;
+  margin: 0 auto;
 }
+
+#date {
+  color: #878787;
+}
+
 #humidity-results {
+  color: #878787;
   text-align: right;
 }
 .visual-rep-text {
@@ -61,6 +68,7 @@ p {
   line-height: 20px;
 }
 #weather-description {
+  color: #878787;
   text-align: right;
 }
 .weekly-prediction {
@@ -69,13 +77,19 @@ p {
   margin: 10px 0 20px 0;
 }
 #wind-speed {
+  color: #878787;
   text-align: right;
 }
 .container {
   border: 1px solid;
   border-color: rgba(134, 121, 121, 0.2);
   border-radius: 5px;
-  background: linear-gradient(60deg, #abecd6 0%, #fbed96 100%);
+  background: radial-gradient(
+    circle at 10% 20%,
+    rgb(255, 246, 236) 39.5%,
+    rgba(100, 46, 122, 0.23) 100.2%
+  );
+
   box-shadow: 2px 2px 0 0 darkgrey;
   width: 50%;
   margin-top: 20px;
@@ -93,11 +107,19 @@ p {
   text-align: center;
 }
 .temperature-digit {
-  font-size: 35px;
+  font-family:Arial, Helvetica, sans-serif
+  color: black;
+  font-size: 45px;
   font-weight: bold;
 }
 .temperature {
+  font-family:Arial, Helvetica, sans-serif
   font-size: 16px;
   position: relative;
-  top: -15px;
+  top: -22px;
+}
+
+.temperature .active {
+  color:rgb(33, 33, 33);
+  cursor: default;
 }

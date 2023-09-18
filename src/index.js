@@ -10,12 +10,19 @@ function search(event) {
   axios.get(apiUrl).then(getTemp);
 }
 function getTemp(response) {
-  let temp = document.querySelector("#celsius-temp");
+  let temp = document.querySelector("#weather-temp");
   temp.innerHTML = Math.round(response.data.main.temp);
+  celsiusTemp = temp.innerHTML;
 
   let h1 = document.querySelector("h1");
   h1.innerHTML = response.data.name;
   weatherResults(response);
+
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 function weatherResults(response) {
   let weatherDescription = document.querySelector("#weather-description");
@@ -41,6 +48,23 @@ function currentLocation(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(searchLocation);
 }
+
+function getFahrenheitTemp(event) {
+  event.preventDefault();
+  let tempElement = document.querySelector("#weather-temp");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  tempElement.innerHTML = Math.round((celsiusTemp * 9) / 5) + 32;
+}
+
+function getCelsiusTemp(event) {
+  event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  let tempElement = document.querySelector("#weather-temp");
+  tempElement.innerHTML = celsiusTemp;
+}
+
 let currentButton = document.querySelector("#current-button");
 currentButton.addEventListener("click", currentLocation);
 
@@ -66,15 +90,13 @@ if (minutes < 10) {
 }
 
 let h3 = document.querySelector("#date");
-h3.innerHTML = `${day} ${hours}:${minutes}`;
+h3.innerHTML = `Last updated: ${day} ${hours}:${minutes}`;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
 
-let celsiusTemp = document.querySelector("#celsius-temp");
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", getFahrenheitTemp);
 
 let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", function () {
-  celsiusTemp.innerHTML = "10";
-  // console.log(celsiusTemp);
-});
+celsiusLink.addEventListener("click", getCelsiusTemp);
