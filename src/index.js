@@ -10,12 +10,19 @@ function search(event) {
   axios.get(apiUrl).then(getTemp);
 }
 function getTemp(response) {
+  console.log(response.data.weather[0].icon);
   let temp = document.querySelector("#celsius-temp");
   temp.innerHTML = Math.round(response.data.main.temp);
 
   let h1 = document.querySelector("h1");
   h1.innerHTML = response.data.name;
   weatherResults(response);
+
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 function weatherResults(response) {
   let weatherDescription = document.querySelector("#weather-description");
@@ -29,6 +36,7 @@ function weatherResults(response) {
   let windSpeedResults = Math.round(response.data.wind.speed);
   windSpeed.innerHTML = `Wind: ${windSpeedResults}km/h`;
 }
+0;
 
 function searchLocation(position) {
   let apiKey = "63214c4281922e3bb72fdf12dada7734";
@@ -66,7 +74,7 @@ if (minutes < 10) {
 }
 
 let h3 = document.querySelector("#date");
-h3.innerHTML = `${day} ${hours}:${minutes}`;
+h3.innerHTML = `Last updated: ${day} ${hours}:${minutes}`;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
