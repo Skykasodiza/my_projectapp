@@ -24,13 +24,11 @@
     <div class="container">
       <br />
       <form id ="search-form">
-      <input type="search" id="search-input" placeholder="Enter the city to search" size="40" top="20px" />
+      <input type="search" id="search-input" placeholder="Enter the city to search" size="40" top="20px"/>
       <input type="submit" value="Search" class="button-format">  
       <span id="current-button"> <button>Current</button>
       </span>
     </form>
-    
-      <br />
       <p>
       <div class="row">
         <div class="col-6">
@@ -40,15 +38,18 @@
           <h3 id="date">
             Monday 31 July 2023 11:11
           </h3>
-          <span id="celsius-temp" class="temperature-digit">
+          <span id="weather-temp" class="temperature-digit">
             10
           </span>
-          <span id ="celsius-link" class="temperature">
-              <a href="#">ºC</a>
+          <span class="temperature"><a href="#" id ="celsius-link" class="active">°C</a>
+              |
+              <a href="#" id="fahrenheit-link">°F</a>
           </span>  
         </div>
         <div class="col-6">
-          <p>⛅</p>
+          <p>
+            <img src="https://ssl.gstatic.com/onebox/weather/64/sunny.png" alt="sun" id="icon"/>
+          </p>
           <div id="weather-description">Clear with periodic clouds
           </div>
           <div id="humidity-results">Humidity: 10%</div>
