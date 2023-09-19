@@ -24,7 +24,12 @@ h2 {
   font-weight: bold;
 }
 h3 {
+<<<<<<< HEAD
   font-size: 16px;
+=======
+  color: #878787;
+  font-size: medium;
+>>>>>>> 0ed1a51b791e6ad878ce3275728a3dd4f46563c9
   padding: none;
 }
 
