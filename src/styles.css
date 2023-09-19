@@ -16,7 +16,7 @@ button {
 h1 {
   display: block;
   margin: 0 auto;
-  color: rgb(33, 33, 33);
+  color: #878787;
   font-weight: 950px;
 }
 h2 {
@@ -24,12 +24,7 @@ h2 {
   font-weight: bold;
 }
 h3 {
-<<<<<<< HEAD
   font-size: 16px;
-=======
-  color: #878787;
-  font-size: medium;
->>>>>>> 0ed1a51b791e6ad878ce3275728a3dd4f46563c9
   padding: none;
 }
 
@@ -112,19 +107,19 @@ p {
   text-align: center;
 }
 .temperature-digit {
-  font-family:Arial, Helvetica, sans-serif
+  font-family: Arial, Helvetica, sans-serif;
   color: black;
-  font-size: 45px;
-  font-weight: bold;
+  font-size: 48px;
+  font-weight: 400;
 }
 .temperature {
-  font-family:Arial, Helvetica, sans-serif
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   position: relative;
   top: -22px;
 }
 
 .temperature .active {
-  color:rgb(33, 33, 33);
+  color: rgb(33, 33, 33);
   cursor: default;
 }

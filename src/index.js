@@ -10,12 +10,7 @@ function search(event) {
   axios.get(apiUrl).then(getTemp);
 }
 function getTemp(response) {
-<<<<<<< HEAD
   let temp = document.querySelector("#weather-temp");
-=======
-  console.log(response.data.weather[0].icon);
-  let temp = document.querySelector("#celsius-temp");
->>>>>>> 0ed1a51b791e6ad878ce3275728a3dd4f46563c9
   temp.innerHTML = Math.round(response.data.main.temp);
   celsiusTemp = temp.innerHTML;
 
