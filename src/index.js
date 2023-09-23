@@ -30,7 +30,6 @@ function forecastResults(response) {
         forecastHTMLText +
         `<div class="col-2">
       <div class="card w-55">
-        
           <span class="card-title" id="temp-minimum">${Math.round(
             forecastDay.temperature.minimum
           )}°</span>
@@ -44,7 +43,7 @@ function forecastResults(response) {
             ${convertDayStamp(forecastDay.time)}
           </p>
         </div>
-    
+  
     </div>
   `;
     }
@@ -149,8 +148,5 @@ h3.innerHTML = `Last updated: ${day} ${hours}:${minutes}`;
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
 
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", getFahrenheitTemp);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", getCelsiusTemp);
+//let celsiusLink = document.querySelector("#celsius-link");
+//celsiusLink.addEventListener("click", getCelsiusTemp);
