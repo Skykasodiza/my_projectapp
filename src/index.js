@@ -9,6 +9,57 @@ function search(event) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=63214c4281922e3bb72fdf12dada7734&units=metric`;
   axios.get(apiUrl).then(getTemp);
 }
+
+function convertDayStamp(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
+function forecastResults(response) {
+  let dailyForecast = response.data.daily;
+  console.log(dailyForecast);
+  let forecast = document.querySelector("#forecast");
+  let forecastHTMLText = `<div class="row">`;
+
+  dailyForecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTMLText =
+        forecastHTMLText +
+        `<div class="col-2">
+      <div class="card w-55">
+        
+          <span class="card-title" id="temp-minimum">${Math.round(
+            forecastDay.temperature.minimum
+          )}°</span>
+            <span id="temp-maximum">${Math.round(
+              forecastDay.temperature.maximum
+            )}°</span>
+          <img src=${
+            forecastDay.condition.icon_url
+          } class="forecast-icon" id="forecast-icon"/>
+          <p class="card-text" id="forecast-day">
+            ${convertDayStamp(forecastDay.time)}
+          </p>
+        </div>
+    
+    </div>
+  `;
+    }
+  });
+
+  forecastHTMLText = forecastHTMLText + `</div>`;
+  forecast.innerHTML = forecastHTMLText;
+}
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "atfobba123890d45c705305f37be9604";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.lon}&lat=${coordinates.lat}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(forecastResults);
+}
+
 function getTemp(response) {
   let temp = document.querySelector("#weather-temp");
   temp.innerHTML = Math.round(response.data.main.temp);
@@ -23,6 +74,8 @@ function getTemp(response) {
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+
+  getForecast(response.data.coord);
 }
 function weatherResults(response) {
   let weatherDescription = document.querySelector("#weather-description");
